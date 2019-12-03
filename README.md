@@ -58,8 +58,8 @@
 	  render(){
 	    const companyName = "DumbWays.id";
 	    return (
-	      <div className="App-content">
-		<p>Welcome To {companyName} Batch {this.getBacth()}</p>
+	      	<div className="App-content">
+			<p>Welcome To {companyName} Batch {this.getBacth()}</p>
 		</div>
 	    );
 	  }

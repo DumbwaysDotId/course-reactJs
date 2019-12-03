@@ -77,5 +77,5 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
 	}
    ```
 
-    There are two component terms based on their placement, namely the parent component and the child component,
+   There are two component terms based on their placement, namely the parent component and the child component,
 in the example above, the Header and Content components are called child components, while the App component is called the parent component

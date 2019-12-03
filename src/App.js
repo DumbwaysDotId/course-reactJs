@@ -32,6 +32,9 @@ class Content extends Component {
     return (
       <div className="App-content">
         <p>Welcome To {companyName} Batch {this.getBacth()}</p>
+        <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>
+        Click Me
+        </button>
       </div>
     );
   }

@@ -20,8 +20,8 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
       </div>
     );
   }
- }
- ...
+  }
+  ...
  ```
 
 

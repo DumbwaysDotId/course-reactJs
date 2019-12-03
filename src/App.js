@@ -32,6 +32,7 @@ class Content extends Component {
     return (
       <div className="App-content">
         <p>Welcome To {companyName} Batch {this.getBacth()}</p>
+        <img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style={{width:"50%", height: "50%"}}/><br></br>
         <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>
         Click Me
         </button>

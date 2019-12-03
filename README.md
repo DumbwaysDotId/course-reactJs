@@ -31,7 +31,8 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
      );
    }
   }
- ```
+  ```
+
 
 ## How to use component
 
@@ -58,10 +59,10 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
       	  <Header />
           <Content />
          </div>
-     );
+      );
+     }
     }
-  }
-...
+    ...
     ```
 
     There are two component terms based on their placement, namely the parent component and the child component,

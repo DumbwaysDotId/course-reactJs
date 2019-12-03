@@ -56,8 +56,8 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
      render(){
   	return (
     	 <div className="App">
-      	  <Header />
-          <Content />
+      	    <Header />
+            <Content />
          </div>
       );
      }

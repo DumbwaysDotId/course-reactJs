@@ -60,7 +60,7 @@
 	    return (
 	      <div className="App-content">
 		<p>Welcome To {companyName} Batch {this.getBacth()}</p>
-      	      </div>
+		</div>
 	    );
 	  }
 	}

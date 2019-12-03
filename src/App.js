@@ -6,11 +6,31 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Welcome To DumbWays.id</p>
-      </header>
+      <Header />
+      
+      <Content />
     </div>
   );
+  }
+}
+
+class Header extends Component {
+  render(){
+    return (
+      <div>
+        <h1>This is Header</h1>
+      </div>
+    );
+  }
+}
+
+class Content extends Component {
+  render(){
+    return (
+      <div className="App-content">
+        <p>Welcome To DumbWays.id</p>
+      </div>
+    );
   }
 }
 

@@ -20,7 +20,7 @@
 
 ## Define Embedding Expression in JSX
 
-  - Define Embedding Expression
+- Define Embedding Expression
 
   to embed on JSX is very easy we just need to add "{}"
   example:
@@ -48,6 +48,3 @@
     }
     }
     ```
-
-    There are two component terms based on their placement, namely the parent component and the child component,
-in the example above, the Header and Content components are called child components, while the App component is called the parent component

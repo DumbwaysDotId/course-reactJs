@@ -55,10 +55,10 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
       // use the render function to define the component appearance
      render(){
   	return (
-    	 <div className="App">
-      	    <Header />
-            <Content />
-         </div>
+	<div className="App">
+	    <Header />
+	    <Content />
+	 </div>
       );
      }
     }

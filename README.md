@@ -1,4 +1,4 @@
-# Init ReactJs-App
+# Init ReactJs-App & Creat App ReactJs
 
 To init ReactJs app, simply follow these steps:
 - Install NodeJs and NPM on Your PC https://nodejs.org
@@ -23,5 +23,5 @@ $ npm install -g create-react-app.
 -After the necessary tools are ready, then the next step is to execute the command in your terminal or cmd, as follows.
 to create a ReactJs project
 ```
-$ Npx create-react-app my-website
+$ npx create-react-app my-website
 ```

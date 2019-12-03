@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
-
+import Increment from './Increment';
 class App extends Component {
 
   render(){
@@ -17,7 +17,7 @@ class Header extends Component {
   render(){
     return (
       <div>
-        <h1>{this.props.title}</h1>
+        <h1>{this.props.tit}</h1>
       </div>
     );
   }
@@ -35,7 +35,9 @@ class Content extends Component {
         <img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style={{width:"50%", height: "50%"}}/><br></br>
         <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>
         Click Me
-        </button>
+        </button> <br></br>
+
+        <Increment/>
       </div>
     );
   }

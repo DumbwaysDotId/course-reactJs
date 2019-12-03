@@ -7,7 +7,6 @@ class App extends Component {
   return (
     <div className="App">
       <Header />
-      
       <Content />
     </div>
   );
@@ -25,10 +24,14 @@ class Header extends Component {
 }
 
 class Content extends Component {
+  getBacth(){
+    return 12+1;
+  }
   render(){
+    const companyName = "DumbWays.id";
     return (
       <div className="App-content">
-        <p>Welcome To DumbWays.id</p>
+        <p>Welcome To {companyName} Batch {this.getBacth()}</p>
       </div>
     );
   }

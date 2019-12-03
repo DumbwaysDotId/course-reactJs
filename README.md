@@ -33,7 +33,6 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
   }
   ```
 
-
 ## How to use component
 
   - Add to JSX

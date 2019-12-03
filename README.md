@@ -10,20 +10,17 @@ $ npm -v
 - Install Npx
 ``` 
 npm install -g npx
-```
-- Create a directory for Your app, for example
-```
-$ mkdir reactJs
-```
-- Init ReactJs App in that directory
-```
-$ cd reactJs
 $ npm install -g create-react-app.
 ```
 -After the necessary tools are ready, then the next step is to execute the command in your terminal or cmd, as follows.
 to create a ReactJs project
 ```
 $ npx create-react-app my-website
+$ cd my-website
 ```
-- open your browser at http://localhost:3000
+- To run the program
+```
+$ npm start
+```
+- Open your browser at http://localhost:3000
 - You will see "Edit src/App.js and save to reload." and an image will appear printed on your browser

@@ -19,12 +19,19 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
         <h1>This is Header</h1>
       </div>
     );
+   }
   }
+  
+  class Content extends Component {
+  render(){
+    return (
+      <div className="App-content">
+        <p>Welcome To DumbWays.id</p>
+      </div>
+     );
+   }
   }
-  ...
  ```
-
-
 
 ## How to use component
 
@@ -33,6 +40,7 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
   	example:
     ```
 	<Header />
+	<Content />
     ```
     
     Full example how to use component:
@@ -40,24 +48,20 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
 	./App.js
     
     ...
-    // import component
-    import Header from './Header';
-    import Content from './Content';
-
     // create class component
     class App extends Component {
 
       // use the render function to define the component appearance
-      render() {
-        return (
-          <View style={styles.container}>
-            <Header />
-            <Content />
-          </View>
-        )
-      }
+     render(){
+  	return (
+    	 <div className="App">
+      	  <Header />
+          <Content />
+         </div>
+     );
     }
-	...
+  }
+...
     ```
 
     There are two component terms based on their placement, namely the parent component and the child component,

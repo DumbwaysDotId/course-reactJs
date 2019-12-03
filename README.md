@@ -1,87 +1,90 @@
-# Props
+# State
 
-  Most components can be customized when they are created, with different parameters. These creation parameters are called props, short for properties. If in html commonly called attributes, such as id, class, onclick, etc.
+  There are two types of data that control a component: props and state. props are set by the parent and they are fixed throughout the lifetime of a component. For data that is going to change, we have to use state.
 
-# Difine Props
+# Difine State
 
-- For example, one basic ReactJs component is the Image. When you create an image, you can use a prop named source to control what image it shows.
+ Define the state in the constructor, so that the value initialization is done the first time the component is run.
+ in this example problem we will create a function to add 1x each time we click the button
  
   example:
   ```
-  ...
-   <img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style {{width:"50%", height: "50%"}}/><br></br>\
-  ...
-  ```
-  *in the example above is the default props or attributes in the img tag*
-  
-- Your own components can also use props.
-
-  example:
-  ```
-  import React,{Component} from 'react';
-  import './App.css';
-  ...
-  <Header title="This is Header"/>
-  ...
-  ```
-  *from defining the props above, there is the name of the props is **title** and value props is **This is header***
-  
-## How to use props on the own component
-
- - If the component definition is a class component
-
-    Use *this.props.name_props* inside the function of class component, for example in render, componentDidMount, etc, or custom function.
-
-    ```
-    ...
-    class Header extends Component {
-    render(){
-    return (
-      <div>
-        <h1>{this.props.title}</h1>
-      </div>
-        );
-      }
+ class Increment extends Component {
+    constructor(){
+        super();
+	//Define state Here
+        this.state = {
+            counter: 0
+        }
     }
+  ```
+  *State data types are objects, properties in them, called name state counter, and their values are called state values 0.*
+  
+## Change Value State
+
+To change the state value, use the setState function with the object parameter containing the state name and new state value
+For example triggers run the setState function by using the default javascript function, counter + 1
+
+    ```
+    ...
+    <button onClick={()=> this.setState({counter: this.state.counter + 1})}>
     ...
     ```
-  
-  Full example Handle Event:
+ 
+ ## How to use state
+ 
+ How to use state is almost the same as how to use props, just this.state.name_state
+ 
+    ```
+     <p>{this.state.counter}</p>
+    ```
+    
+  Full example State Component Increment:
   
     ```
-    import React,{Component} from 'react';
+    	import React,{Component} from 'react';
 	import './App.css';
-	class App extends Component {
-	  render(){
-	  return (
-	    <div className="App">
-	      <Header title="This is Header"/>
-	      <Content />
-	    </div>
-	  );
-	  }
-	}
-	class Header extends Component {
-	  render(){
-	    return (
-	      <div>
-		<h1>{this.props.title}</h1>
+	class Increment extends Component {
+	    constructor(){
+		super()
+		this.state = {
+		    counter: 0
+		}
+	    }
+	    render(){
+	      return (
+	      <div className="App">
+		  <p>Click The Button to Increment ! !</p>
+		  <button onClick={()=> this.setState({counter: this.state.counter + 1})}>
+		  <p>{this.state.counter}</p></button>
 	      </div>
 	    );
+	    } 
 	  }
-	}
-	class Content extends Component {
-	 getBacth(){
+    ```
+
+   and at the end we will import this component increase in the js application
+   ```
+   	import Increment from './Increment';
+
+	...
+	  class Content extends Component {
+	  getBacth(){
 	    return 12+1;
 	  }
 	  render(){
 	    const companyName = "DumbWays.id";
 	    return (
-		<div className="App-content">
-			<p>Welcome To {companyName} Batch {this.getBacth()}</p>
-			 <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>Click Me</button>
-		</div>
+	      <div className="App-content">
+		<p>Welcome To {companyName} Batch {this.getBacth()}</p>
+		<img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style={{width:"50%", height: "50%"}}/><br></br>
+		<button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>
+		Click Me
+		</button> <br></br>
+		<Increment/>
+	      </div>
 	    );
 	  }
 	}
-    ```
+	...
+   ````

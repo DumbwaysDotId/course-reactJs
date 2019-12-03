@@ -11,8 +11,6 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
 
   example:
   ```
-  ./Header.js
-  
   ...
   class Header extends Component {
   render(){
@@ -22,18 +20,10 @@ For example: Button, NavBar, Footer, Card, etc. Combine it like a puzzle to buil
       </div>
     );
   }
-}
+ }
+ ...
+ ```
 
-  class Content extends Component {
-  render(){
-    return (
-      <div className="App-content">
-        <p>Welcome To DumbWays.id</p>
-      </div>
-    );
-  }
-}
-  ```
 
 
 ## How to use component

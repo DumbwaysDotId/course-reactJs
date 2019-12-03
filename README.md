@@ -25,3 +25,5 @@ to create a ReactJs project
 ```
 $ npx create-react-app my-website
 ```
+- open your browser at http://localhost:3000
+- You will see "Edit src/App.js and save to reload." and an image will appear printed on your browser

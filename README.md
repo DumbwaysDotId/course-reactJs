@@ -1,87 +1,132 @@
-# Props
+# React Router Dom
 
-  Most components can be customized when they are created, with different parameters. These creation parameters are called props, short for properties. If in html commonly called attributes, such as id, class, onclick, etc.
+  in reactJs it's a little different from HTML for switching between pages, for reactJs we need to use a library called React-router-dom
 
-# Difine Props
+# How To Install React Router Dom
 
-- For example, one basic ReactJs component is the Image. When you create an image, you can use a prop named source to control what image it shows.
+- to install install router dom on reactjs is quite easy we just need to type the code in the terminal before entering the code we first enter the project that we have.
  
   example:
   ```
-  ...
-   <img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style {{width:"50%", height: "50%"}}/><br></br>\
-  ...
+  $ npm install react-router-dom
   ```
-  *in the example above is the default props or attributes in the img tag*
-  
-- Your own components can also use props.
+ 
+## Basic Usage React Router Dom
 
-  example:
-  ```
-  import React,{Component} from 'react';
-  import './App.css';
-  ...
-  <Header title="This is Header"/>
-  ...
-  ```
-  *from defining the props above, there is the name of the props is **title** and value props is **This is header***
-  
-## How to use props on the own component
+ - First import the required pages and react-router-dom components
 
- - If the component definition is a class component
-
-    Use *this.props.name_props* inside the function of class component, for example in render, componentDidMount, etc, or custom function.
-
-    ```
-    ...
-    class Header extends Component {
-    render(){
-    return (
-      <div>
-        <h1>{this.props.title}</h1>
-      </div>
-        );
-      }
-    }
-    ...
-    ```
-  
-  Full example Handle Event:
-  
     ```
     import React,{Component} from 'react';
-	import './App.css';
+    import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+    } from "react-router-dom";
+    
+    import Home from "./Home";
+    import Increment from "./Increment";
+    import List from "./listReact";
+    ```
+  
+  - the second stage we make the navigation first to move pages from page one to another page
+  
+    ```
+    class App extends Component {
+    render(){
+     return (
+      <Router>
+       <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Increment">Increment</Link>
+            </li>
+            <li>
+              <Link to="/List">List</Link>
+            </li>
+          </ul>
+        </nav>
+      ```
+    - the third stage we enter which pages are included in our web navigation to move from page to page
+      ```
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/List">
+            <List />
+          </Route>
+          <Route path="/Increment">
+            <Increment />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+      </Router>
+      );
+      }
+      }
+      
+      export default App;
+      ```
+    - Full Code
+    
+    ```
+    import React,{Component} from 'react';
+    import {
+	  BrowserRouter as Router,
+	  Switch,
+	  Route,
+	  Link
+	} from "react-router-dom";
+
+	import Home from "./Home";
+	import Increment from "./Increment";
+	import List from "./listReact";
+
+
 	class App extends Component {
-	  render(){
-	  return (
-	    <div className="App">
-	      <Header title="This is Header"/>
-	      <Content />
-	    </div>
-	  );
-	  }
-	}
-	class Header extends Component {
-	  render(){
-	    return (
-	      <div>
-		<h1>{this.props.title}</h1>
-	      </div>
-	    );
-	  }
-	}
-	class Content extends Component {
-	 getBacth(){
-	    return 12+1;
-	  }
-	  render(){
-	    const companyName = "DumbWays.id";
-	    return (
-		<div className="App-content">
-			<p>Welcome To {companyName} Batch {this.getBacth()}</p>
-			 <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>Click Me</button>
-		</div>
-	    );
-	  }
-	}
+	render(){
+	return (
+	<Router>
+	<div>
+	<nav>
+	  <ul>
+	    <li>
+	      <Link to="/">Home</Link>
+	    </li>
+	    <li>
+	      <Link to="/Increment">Increment</Link>
+	    </li>
+	    <li>
+	      <Link to="/List">List</Link>
+	    </li>
+	  </ul>
+	</nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/List">
+            <List />
+          </Route>
+          <Route path="/Increment">
+            <Increment />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+    );
+    }
+    }
+    
+    export default App;
     ```

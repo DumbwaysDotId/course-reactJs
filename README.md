@@ -51,34 +51,36 @@
           </ul>
         </nav>
       ```
-    - the third stage we enter which pages are included in our web navigation to move from page to page
-      ```
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/List">
-            <List />
-          </Route>
-          <Route path="/Increment">
-            <Increment />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-      </Router>
-      );
-      }
-      }
       
-      export default App;
-      ```
-    - Full Code
+   - the third stage we enter which pages are included in our web navigation to move from page to page
+   
+	```
+	{/* A <Switch> looks through its children <Route>s and
+	    renders the first one that matches the current URL. */}
+	<Switch>
+	  <Route path="/List">
+	    <List />
+	  </Route>
+	  <Route path="/Increment">
+	    <Increment />
+	  </Route>
+	  <Route path="/">
+	    <Home />
+	  </Route>
+	</Switch>
+	</div>
+	</Router>
+	);
+	}
+	}
+
+	export default App;
+	```
+   - Full Code
     
-    ```
-    import React,{Component} from 'react';
-    import {
+	```
+	import React,{Component} from 'react';
+	import {
 	  BrowserRouter as Router,
 	  Switch,
 	  Route,
@@ -109,24 +111,24 @@
 	  </ul>
 	</nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/List">
-            <List />
-          </Route>
-          <Route path="/Increment">
-            <Increment />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-    );
-    }
-    }
-    
-    export default App;
-    ```
+	{/* A <Switch> looks through its children <Route>s and
+	    renders the first one that matches the current URL. */}
+	<Switch>
+	  <Route path="/List">
+	    <List />
+	  </Route>
+	  <Route path="/Increment">
+	    <Increment />
+	  </Route>
+	  <Route path="/">
+	    <Home />
+	  </Route>
+	</Switch>
+	</div>
+	</Router>
+	);
+	}
+	}
+
+	export default App;
+	```

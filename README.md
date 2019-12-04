@@ -16,7 +16,7 @@ First use a method like this:
 
    css defining reacts in general there are 3 ways of delivery:
   
- - Inline CSS
+  - Inline CSS
    this method is least recommended because it makes the code structure less tidy
    
    Example :

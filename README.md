@@ -13,7 +13,7 @@
  
 ## Basic Usage React Router Dom
 
- - First import the required pages and react-router-dom components
+- First import the required pages and react-router-dom components
 
     ```
     import React,{Component} from 'react';
@@ -29,7 +29,7 @@
     import List from "./listReact";
     ```
   
-  - the second stage we make the navigation first to move pages from page one to another page
+- the second stage we make the navigation first to move pages from page one to another page
   
     ```
     class App extends Component {
@@ -52,7 +52,7 @@
         </nav>
       ```
       
-   - the third stage we enter which pages are included in our web navigation to move from page to page
+- the third stage we enter which pages are included in our web navigation to move from page to page
    
 	```
 	{/* A <Switch> looks through its children <Route>s and
@@ -76,7 +76,7 @@
 
 	export default App;
 	```
-   - Full Code
+- Full Code
     
 	```
 	import React,{Component} from 'react';

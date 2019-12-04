@@ -20,6 +20,8 @@
   }
   export default listReact;
   ```
+ *general form of map () {name_array.map(initials)}*
+ 
 - secondly I will import the file in the app.js file
   ```
   ...

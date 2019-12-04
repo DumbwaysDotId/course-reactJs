@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './App.css';
 import Increment from './Increment';
+import CSS from './useCSS';
 class App extends Component {
 
   render(){
@@ -8,6 +9,7 @@ class App extends Component {
     <div className="App">
       <Header title="This is Header"/>
       <Content />
+      <CSS />
     </div>
   );
   }
@@ -17,7 +19,7 @@ class Header extends Component {
   render(){
     return (
       <div>
-        <h1>{this.props.tit}</h1>
+        <h1>{this.props.title}</h1>
       </div>
     );
   }
@@ -36,8 +38,7 @@ class Content extends Component {
         <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>
         Click Me
         </button> <br></br>
-
-        <Increment/>
+        <Increment/> <br></br>
       </div>
     );
   }

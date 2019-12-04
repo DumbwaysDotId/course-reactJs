@@ -1,87 +1,104 @@
-# Props
+# Styling in ReactJs
 
-  Most components can be customized when they are created, with different parameters. These creation parameters are called props, short for properties. If in html commonly called attributes, such as id, class, onclick, etc.
+  so the same as HTML reacts can also use styling on CSS but there are a few improvements where in reacts can use 2 methods in writing properties on css
 
-# Difine Props
+First use a method like this:
 
-- For example, one basic ReactJs component is the Image. When you create an image, you can use a prop named source to control what image it shows.
+ Example:
+  background-color
+  
+ Two can use like this:
  
-  example:
-  ```
-  ...
-   <img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style {{width:"50%", height: "50%"}}/><br></br>\
-  ...
-  ```
-  *in the example above is the default props or attributes in the img tag*
+ Example:
+   backgroundColor
+
+# How to define CSS in reactJs
+
+   css defining reacts in general there are 3 ways of delivery:
   
-- Your own components can also use props.
-
-  example:
-  ```
-  import React,{Component} from 'react';
-  import './App.css';
-  ...
-  <Header title="This is Header"/>
-  ...
-  ```
-  *from defining the props above, there is the name of the props is **title** and value props is **This is header***
-  
-## How to use props on the own component
-
- - If the component definition is a class component
-
-    Use *this.props.name_props* inside the function of class component, for example in render, componentDidMount, etc, or custom function.
-
-    ```
-    ...
-    class Header extends Component {
-    render(){
-    return (
-      <div>
-        <h1>{this.props.title}</h1>
-      </div>
-        );
+ - Inline CSS
+   this method is least recommended because it makes the code structure less tidy
+   
+   Example :
+   ```
+   <p style={{color:"red"}}>This Is Red</p>
+   ```
+   
+   - Internal CSS
+     this method is quite often used, but in my personal opinion it is less effective because it is still in the same file so if you want to use it again on other files it will not be used again.
+     
+     the first step we make first a variable with the name style.
+     
+     Example :
+     ```
+     ...
+     const style = {
+     bigBlue: {
+        fontSize: "50px",
+        color : "blue",
+        fontWeight: "bold"
+     },
+     smallPink: {
+        fontSize: "25px",
+        color: "pink",
+        fontWeight: "bold"
+     },
+     bigOrange: {
+        fontWeight: "bold",
+        color: "orange",
+        fontSize: "50px"
+     }
+     }
+     ...
+     ```
+     then to use it we can write it like this:
+     
+     example:
+     ```
+      <p style={style.bigBlue}>This Is Blue</p>
+     ```
+     
+   - External CSS
+     this method is most recommended because the css file is separated so the code looks more tidy and can be reused.
+     
+     First, first create a CSS file named App.css
+     
+     Example :
+     ```
+     .App {
+	  text-align: center;
       }
-    }
-    ...
-    ```
-  
-  Full example Handle Event:
-  
-    ```
-    import React,{Component} from 'react';
-	import './App.css';
-	class App extends Component {
-	  render(){
-	  return (
-	    <div className="App">
-	      <Header title="This is Header"/>
-	      <Content />
-	    </div>
-	  );
+
+      .App-logo {
+	  height: 40vmin;
+       }
+       
+       .App-content {
+	  background-color: #282c34;
+	  min-height: 100vh;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: calc(10px + 2vmin);
+	  color: white;
+	 }
+	 .App-link {
+	  color: #09d3ac;
 	  }
-	}
-	class Header extends Component {
-	  render(){
-	    return (
-	      <div>
-		<h1>{this.props.title}</h1>
-	      </div>
-	    );
-	  }
-	}
-	class Content extends Component {
-	 getBacth(){
-	    return 12+1;
-	  }
-	  render(){
-	    const companyName = "DumbWays.id";
-	    return (
-		<div className="App-content">
-			<p>Welcome To {companyName} Batch {this.getBacth()}</p>
-			 <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>Click Me</button>
-		</div>
-	    );
-	  }
-	}
-    ```
+       ```
+       the second import css file that was created earlier in the reactjs file.
+       
+       Example :
+       ```
+       ...
+       import './App.css';
+       ...
+       ```
+       the last step to use external css, we can use the className property
+       
+       Example :
+       
+       ```
+        <div className="App">
+       ```

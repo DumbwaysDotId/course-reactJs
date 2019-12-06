@@ -1,48 +1,52 @@
 import React,{Component} from 'react';
-import './App.css';
-import Increment from './Increment';
-import CSS from './useCSS';
-class App extends Component {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
+import Home from "./Home";
+import Increment from "./Increment";
+import List from "./listReact";
+
+
+class App extends Component {
   render(){
   return (
-    <div className="App">
-      <Header title="This is Header"/>
-      <Content />
-      <CSS />
-    </div>
-  );
-  }
-}
-
-class Header extends Component {
-  render(){
-    return (
+    <Router>
       <div>
-        <h1>{this.props.title}</h1>
-      </div>
-    );
-  }
-}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Increment">Increment</Link>
+            </li>
+            <li>
+              <Link to="/List">List</Link>
+            </li>
+          </ul>
+        </nav>
 
-class Content extends Component {
-  getBacth(){
-    return 12+1;
-  }
-  render(){
-    const companyName = "DumbWays.id";
-    return (
-      <div className="App-content">
-        <p>Welcome To {companyName} Batch {this.getBacth()}</p>
-        <img src= {'http://www.youloveit.com/uploads/posts/2019-02/1550499042_youloveit_com_disney_frozen_2_wallpapers08.jpg'}style={{width:"50%", height: "50%"}}/><br></br>
-        <button onClick={(event) => {alert("Hallo Siswa Bootcamp B#13")}}>
-        Click Me
-        </button> <br></br>
-        <Increment/> <br></br>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/List">
+            <List />
+          </Route>
+          <Route path="/Increment">
+            <Increment />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
-
+}
 
 export default App;
